@@ -1,0 +1,7 @@
+<h1>Yelper Helper Restaurants!</h1>
+
+<ul style="list-style-type:disc;">
+<% @restaurants.each do |restaurant|%>
+  <li><h3><a href="/restaurants/<%=restaurant.id%>"><%=restaurant.name%></a></h3></li>
+<% end %>
+</ul>

@@ -1,0 +1,19 @@
+<br>
+<h2>Name: <%=@restaurant.name%></h2>
+<h3>Rating: <%=@restaurant.rating%></h3>
+<h3>Address: <%=@restaurant.address%></h3>
+
+<h4>People who want to try:</h4>
+<% @users.each do |user| %>
+<a href="/users/<%=user.id%>"><%=user.name%></a><br>
+<% end %>
+
+<h5>Add to list of Restaurants to try</h5>
+<form class="" action="/restaurants/<%=@restaurant.id%>" method="post">
+  <select name="user_id">
+    <% @all_users.each do |user| %>
+      <option value="<%= user.id%> "> <%= user.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Submit">
+</form>
